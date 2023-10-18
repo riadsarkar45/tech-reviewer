@@ -1,4 +1,13 @@
+import { useLoaderData } from "react-router-dom";
+
 const Detail = () => {
+
+    const product = useLoaderData();
+    console.log(product.length)
+    if(product.length < 1){
+        confirm("No product availlabel in this brand")
+    }
+
     const imageStyle = {
         backgroundImage: `url(https://i.ibb.co/rb28cXk/giu-vicente-FMArg2k3q-OU-unsplash.jpg)`,
         backgroundSize: 'cover',
@@ -54,56 +63,30 @@ const Detail = () => {
                     </div>
                 </div>
             </div>
-            
+
             <div className="grid grid-cols-3 gap-3 mt-4">
-                <div className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
-                    <figure><img src="https://i.ibb.co/rb28cXk/giu-vicente-FMArg2k3q-OU-unsplash.jpg" alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <div className="card-actions justify-center">
-                        <button className="btn btn-outline btn-info btn-sm">See Dtails</button>
+                {
+                    product?.map(product =>
+                        
+                        <div className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
+                            <figure className="h-[16rem]"><img src={product.imageUrl} alt="Shoes" /></figure>
+                            <div className="grid grid-cols-2 w-[78%] m-auto mt-3">
+                                <h2>Name : {product.name}</h2>
+                                <h2 className="">Brand : {product.brandName}</h2>
+                                <h2 className="mt-2">Price : ${product.price}</h2>
+                                <h2 className="mt-2">Type : {product.productType}</h2>
+                                <h2 className="mt-2">Rating : {product.rating}</h2>
+                            </div>
+                            <div className="card-body">
+                                <div className="card-actions justify-center">
+                                    <button className="btn btn-outline btn-info btn-sm">See Dtails</button>
+                                    <button className="btn btn-outline btn-info btn-sm">Update</button>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                <div className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
-                    <figure><img src="https://i.ibb.co/rb28cXk/giu-vicente-FMArg2k3q-OU-unsplash.jpg" alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <div className="card-actions justify-center">
-                        <button className="btn btn-outline btn-info btn-sm">See Dtails</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
-                    <figure><img src="https://i.ibb.co/rb28cXk/giu-vicente-FMArg2k3q-OU-unsplash.jpg" alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <div className="card-actions justify-center">
-                        <button className="btn btn-outline btn-info btn-sm">See Dtails</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
-                    <figure><img src="https://i.ibb.co/rb28cXk/giu-vicente-FMArg2k3q-OU-unsplash.jpg" alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <div className="card-actions justify-center">
-                        <button className="btn btn-outline btn-info btn-sm">See Dtails</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
-                    <figure><img src="https://i.ibb.co/rb28cXk/giu-vicente-FMArg2k3q-OU-unsplash.jpg" alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <div className="card-actions justify-center">
-                        <button className="btn btn-outline btn-info btn-sm">See Dtails</button>
-                        </div>
-                    </div>
-                </div>
-                <div className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
-                    <figure><img src="https://i.ibb.co/rb28cXk/giu-vicente-FMArg2k3q-OU-unsplash.jpg" alt="Shoes" /></figure>
-                    <div className="card-body">
-                        <div className="card-actions justify-center">
-                        <button className="btn btn-outline btn-info  btn-sm">See Dtails</button>
-                        </div>
-                    </div>
-                </div>
+                    )
+                }
+
             </div>
         </div>
     );
