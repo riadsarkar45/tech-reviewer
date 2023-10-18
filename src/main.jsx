@@ -8,6 +8,7 @@ import BrandCards from './Components/Layout/BrandCards.jsx'
 import Detail from './Components/Layout/Detail.jsx'
 import AddProduct from './Components/Layout/AddProduct.jsx'
 import Update from './Components/Layout/Update.jsx'
+import Details from './Components/Layout/Details.jsx'
 
 const router = createBrowserRouter([
   {
@@ -31,6 +32,16 @@ const router = createBrowserRouter([
         path: "/update/:id",
         element: <Update></Update>,
         loader: ({params}) => fetch(`http://localhost:5000/products/prod/${params.id}`),
+      },
+      {
+        path: "/details/:id",
+        element: <Details></Details>,
+        loader: ({params}) => fetch(`http://localhost:5000/products/prod/${params.id}`),
+      },
+      {
+        path: "/cart",
+        element: <Details></Details>,
+        loader: ({params}) => fetch(`http://localhost:5000/cart`),
       }
     ]
   }

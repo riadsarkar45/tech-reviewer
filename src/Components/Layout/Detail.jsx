@@ -79,7 +79,7 @@ const Detail = () => {
                             </div>
                             <div className="card-body">
                                 <div className="card-actions justify-center">
-                                    <button className="btn btn-outline btn-info btn-sm">See Dtails</button>
+                                    <Link to={`/details/${product._id}`}><button className="btn btn-outline btn-info btn-sm">See Dtails</button></Link>
                                     <Link to={`/update/${product._id}`}><button className="btn btn-outline btn-info btn-sm">Update</button></Link>
                                 </div>
                             </div>
