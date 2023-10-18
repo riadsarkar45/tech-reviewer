@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Detail = () => {
 
@@ -80,7 +80,7 @@ const Detail = () => {
                             <div className="card-body">
                                 <div className="card-actions justify-center">
                                     <button className="btn btn-outline btn-info btn-sm">See Dtails</button>
-                                    <button className="btn btn-outline btn-info btn-sm">Update</button>
+                                    <Link to={`/update/${product._id}`}><button className="btn btn-outline btn-info btn-sm">Update</button></Link>
                                 </div>
                             </div>
                         </div>
