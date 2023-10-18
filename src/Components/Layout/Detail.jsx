@@ -73,7 +73,7 @@ const Detail = () => {
                             <div className="grid grid-cols-2 w-[78%] m-auto mt-3">
                                 <h2>Name : {product.name}</h2>
                                 <h2 className="">Brand : {product.brandName}</h2>
-                                <h2 className="mt-2">Price : ${product.price}</h2>
+                                <h2 className="mt-2">Price : {product.price}</h2>
                                 <h2 className="mt-2">Type : {product.productType}</h2>
                                 <h2 className="mt-2">Rating : {product.rating}</h2>
                             </div>
