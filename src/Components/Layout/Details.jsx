@@ -1,6 +1,8 @@
+import Rating from "react-rating";
 import { useLoaderData } from "react-router-dom";
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import { FaBeer, FaStar } from 'react-icons/fa'
 const Details = () => {
     const loaded = useLoaderData();
     const { _id, imageUrl, name, brandName, productType, price, rating, short_desc } = loaded;
@@ -16,7 +18,7 @@ const Details = () => {
             .then(res => res.json())
             .then(data => {
                 Swal.fire({
-                    position: 'top-end',
+                    position: 'center',
                     icon: 'success',
                     title: 'Item added to the cart',
                     showConfirmButton: false,
@@ -38,8 +40,11 @@ const Details = () => {
                     <h2 className="text-xl">Brand : {brandName}</h2>
                     <h2 className="text-xl">Price : {price}</h2>
                     <h2 className="text-xl">Type : {productType}</h2>
-                    <h2 className="text-xl">{rating}</h2>
-
+                    <Rating className="text-orange-300"
+                        initialRating={rating}
+                        emptySymbol={ <FaStar></FaStar> }
+                        fullSymbol={<FaStar></FaStar>}
+                    />
                     <div className="justify-end mt-1 flex">
                         <button onClick={() => handleAddCart(loaded)} className="btn btn-success">Add to cart</button>
                     </div>

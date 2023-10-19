@@ -1,4 +1,6 @@
 
+import Swal from 'sweetalert2/dist/sweetalert2.js'
+import 'sweetalert2/src/sweetalert2.scss'
 const AddProduct = () => {
     const handleAddProduct = e =>{
         e.preventDefault();
@@ -22,6 +24,14 @@ const AddProduct = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
+            Swal.fire({
+                position: 'center',
+                icon: 'success',
+                title: 'Product Uploaed',
+                showConfirmButton: false,
+                timer: 1500
+            })
+            e.target.reset()
         })
     }
     return (
