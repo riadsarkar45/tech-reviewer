@@ -14,7 +14,7 @@ const BrandCards = () => {
             })
     }, [])
 
-  
+
     return (
         <div className="mt-4">
             <Banner></Banner>
@@ -53,6 +53,49 @@ const BrandCards = () => {
                 </div>
                 <div className="">
                     <img className="h-[19rem] w-full" src="https://i.ibb.co/nM0Hp9g/26432755-freelance-set-4.jpg" alt="" />
+                </div>
+            </div>
+
+            <div className="w-[85%] m-auto mt-4">
+                <div className="text-center">
+                    <h2 className="text-3xl">Top IT Companies Ratings</h2>
+                    <p className="lg:md:w-[50%] m-auto mt-3 text-xl">We selected and sorted the best companies from all over the world specializing in different technologies and solutions.</p>
+                </div>
+
+                <div className="grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 mt-8">
+                    <div>
+                        <h2 className="text-3xl">Software Development</h2>
+                        <div className="mt-4">
+                            <p>Top Software Development Companies</p>
+                            <p> Top Software Development Companies for Startups </p>
+                            <p> Top Software Development Companies in USA </p>
+                            <p>  Top Python and Django Developers</p>
+                            <p> Top .NET Developers </p>
+                            <p> Top Java Developers </p>
+                            <p> Top Unity Developers </p></div>
+                    </div>
+                    <div>
+                        <h2 className="text-3xl">Web Development</h2>
+                        <div className="mt-4">
+                            <p> Top Web Development Companies </p>
+                            <p> Top Ruby on Rails Companies </p>
+                            <p> Top Node.js Development Companies </p>
+                            <p> Top PHP Developers </p>
+                            <p>  Top AngularJS Developers</p>
+                            <p> Top WordPress Developers </p>
+                            <p> Top Drupal Developers </p>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 className="text-3xl">Mobile Development</h2>
+                        <div className="mt-4">
+                            <p>Top Mobile Development Companies</p>
+                            <p>Top iOS App Development Companies</p>
+                            <p>Top Android App Development Companies</p>
+                            <p>Top Cross Platform App Developers</p>
+                            <p>Top React Native Developers</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
