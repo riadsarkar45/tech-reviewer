@@ -14,7 +14,7 @@ const BrandCards = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="grid grid-cols-3 w-[85%] m-auto gap-3 mt-4">
+            <div className="grid md:grid-cols-2 grid-cols-1 lg:grid-cols-3 w-[85%] m-auto gap-3 mt-4">
                 {
                     brands?.map(brand =>
                         <Link key={brand._id} to={`/detail/${brand.name}`}>

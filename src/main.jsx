@@ -9,6 +9,7 @@ import Detail from './Components/Layout/Detail.jsx'
 import AddProduct from './Components/Layout/AddProduct.jsx'
 import Update from './Components/Layout/Update.jsx'
 import Details from './Components/Layout/Details.jsx'
+import Cart from './Components/Layout/Cart.jsx'
 
 const router = createBrowserRouter([
   {
@@ -40,8 +41,8 @@ const router = createBrowserRouter([
       },
       {
         path: "/cart",
-        element: <Details></Details>,
-        loader: ({params}) => fetch(`http://localhost:5000/cart`),
+        element: <Cart></Cart>,
+        loader: () => fetch(`http://localhost:5000/cart`),
       }
     ]
   }

@@ -5,19 +5,26 @@ const Details = () => {
     const loaded = useLoaderData();
     const { _id, imageUrl, name, brandName, productType, price, rating, short_desc } = loaded;
 
-    const handleAddCart = loaded =>{
-        console.log(loaded)
+    const handleAddCart = loaded => {
         fetch('http://localhost:5000/cart', {
             method: "POST",
-            headers:{
-                'content-type' : 'application/json'
+            headers: {
+                'content-type': 'application/json'
             },
             body: JSON.stringify(loaded)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-        })
+            .then(res => res.json())
+            .then(data => {
+                Swal.fire({
+                    position: 'top-end',
+                    icon: 'success',
+                    title: 'Item added to the cart',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                console.log(data)
+            })
+
     }
     return (
         <div>
@@ -34,7 +41,7 @@ const Details = () => {
                     <h2 className="text-xl">{rating}</h2>
 
                     <div className="justify-end mt-1 flex">
-                        <button onClick={() =>handleAddCart(loaded)} className="btn btn-success">Add to cart</button>
+                        <button onClick={() => handleAddCart(loaded)} className="btn btn-success">Add to cart</button>
                     </div>
 
                     <p className="mt-3">{short_desc}</p>

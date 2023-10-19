@@ -19,52 +19,56 @@ const Detail = () => {
 
     return (
         <div className="w-[85%] m-auto">
-            <div className="carousel">
-                <div id="slide1" className="carousel-item relative w-full">
-                    <div style={imageStyle} className="flex justify-center items-center">
-                        <div className="text-center">
-                            <h2 className="text-3xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
-                            <p className="w-[50%] m-auto text-xl text-red-300">
-                                Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide3" className="btn btn-circle">❮</a>
-                        <a href="#slide2" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide2" className="carousel-item relative w-full">
-                    <div style={imageStyle} className="flex justify-center items-center">
-                        <div className="text-center">
-                            <h2 className="text-3xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
-                            <p className="w-[50%] m-auto text-xl text-red-300">
-                                Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide1" className="btn btn-circle">❮</a>
-                        <a href="#slide3" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
-                <div id="slide3" className="carousel-item relative w-full">
-                    <div style={imageStyle} className="flex justify-center items-center">
-                        <div className="text-center">
-                            <h2 className="text-3xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
-                            <p className="w-[50%] m-auto text-xl text-red-300">
-                                Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
-                            </p>
-                        </div>
-                    </div>
-                    <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-                        <a href="#slide2" className="btn btn-circle">❮</a>
-                        <a href="#slide1" className="btn btn-circle">❯</a>
-                    </div>
-                </div>
+<div className="carousel w-[100%] m-auto">
+    <div id="slide1" className="carousel-item relative w-full">
+        <div style={imageStyle} className="flex justify-center items-center">
+            <div className="text-center">
+                <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
+                <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">
+                    Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
+                </p>
             </div>
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide3" className="btn btn-circle">❮</a>
+            <a href="#slide2" className="btn btn-circle">❯</a>
+        </div>
+    </div>
+    <div id="slide2" className="carousel-item relative w-full">
+        <div style={imageStyle} className="flex justify-center items-center">
+            <div className="text-center">
+                <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
+                <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">
+                    Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
+                </p>
+            </div>
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide1" className="btn btn-circle">❮</a>
+            <a href="#slide3" className="btn btn-circle">❯</a>
+        </div>
+    </div>
+    <div id="slide3" className="carousel-item relative w-full">
+        <div style={imageStyle} className="flex justify-center items-center">
+            <div className="text-center">
+                <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
+                <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">
+                    Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
+                </p>
+            </div>
+        </div>
+        <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
+            <a href="#slide2" className="btn btn-circle">❮</a>
+            <a href="#slide1" className="btn btn-circle">❯</a>
+        </div>
+    </div>
+</div>
 
-            <div className="grid grid-cols-3 gap-3 mt-4">
+
+
+
+
+            <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-3 mt-4">
                 {
                     product?.map(product =>
                         
