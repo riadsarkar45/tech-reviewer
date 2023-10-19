@@ -2,7 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { Outlet } from 'react-router-dom';
 import Header from './Header/Header';
 import Footer from './Layout/Footer';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Root = () => {
     const [isLightTheme, setIsLightTheme] = useState(true);
 
@@ -33,6 +34,7 @@ const Root = () => {
                 </button>
             </div>
             <Outlet></Outlet>
+            <ToastContainer/>
             <Footer></Footer>
         </div>
     );

@@ -10,39 +10,51 @@ import AddProduct from './Components/Layout/AddProduct.jsx'
 import Update from './Components/Layout/Update.jsx'
 import Details from './Components/Layout/Details.jsx'
 import Cart from './Components/Layout/Cart.jsx'
+import AuthContext from './Components/AuthContext/AuthContext.jsx'
+import Login from './Components/Layout/Login.jsx'
+import SignUp from './Components/Layout/SignUp.jsx'
+import PrivateRoute from './Components/PrivateRoute/PrivateRoute.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
-    children:[
+    children: [
       {
-        path:"/",
+        path: "/",
         element: <BrandCards></BrandCards>
       },
       {
-        path:"/detail/:brand",
+        path: "/detail/:brand",
         element: <Detail></Detail>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/${params.brand}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}`)
       },
       {
         path: "add-product",
-        element: <AddProduct></AddProduct>
+        element: <PrivateRoute><AddProduct></AddProduct></PrivateRoute>
       },
       {
         path: "/update/:id",
         element: <Update></Update>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/prod/${params.id}`),
+        loader: ({ params }) => fetch(`http://localhost:5000/products/prod/${params.id}`),
       },
       {
         path: "/details/:id",
-        element: <Details></Details>,
-        loader: ({params}) => fetch(`http://localhost:5000/products/prod/${params.id}`),
+        element: <PrivateRoute><Details></Details></PrivateRoute>,
+        loader: ({ params }) => fetch(`http://localhost:5000/products/prod/${params.id}`),
       },
       {
         path: "/cart",
-        element: <Cart></Cart>,
+        element: <PrivateRoute><Cart></Cart></PrivateRoute>,
         loader: () => fetch(`http://localhost:5000/cart`),
+      },
+      {
+        path: "/login",
+        element: <Login></Login>,
+      },
+      {
+        path: "/signup",
+        element: <SignUp></SignUp>,
       }
     ]
   }
@@ -50,6 +62,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router}></RouterProvider>
+    <AuthContext>
+      <RouterProvider router={router}></RouterProvider>
+    </AuthContext>
   </React.StrictMode>,
 )
