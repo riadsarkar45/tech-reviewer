@@ -14,7 +14,7 @@ const AddProduct = () => {
         const short_desc = form.short_description.value;
         const product = {name, imageUrl, brandName, productType, price, rating, short_desc}
         console.log(product)
-        fetch("http://localhost:5000/products", {
+        fetch("https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products", {
             method: "POST",
             headers:{
                 "content-type" : "application/json"

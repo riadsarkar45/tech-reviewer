@@ -28,7 +28,7 @@ const Root = () => {
     return (
         <div data-theme={dataTheme}>
             <Header></Header>
-            <div className='flex justify-end'>
+            <div className='flex justify-center'>
                 <button onClick={toggleTheme} className=' btn btn-success btn-sm justify-center'>
                     {isLightTheme ? 'Go Dark Mood' : 'Go Light Mood'}
                 </button>

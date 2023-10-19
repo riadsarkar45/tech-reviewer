@@ -1,5 +1,6 @@
 import React from 'react';
 import { useLoaderData } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Update = () => {
     const loadedData = useLoaderData();
@@ -17,7 +18,7 @@ const Update = () => {
         const short_desc = form.short_description.value;
         const product = {name, imageUrl, brandName, productType, price, rating, short_desc}
         console.log(product)
-        fetch(`http://localhost:5000/products/prod/${_id}`, {
+        fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products/prod/${_id}`, {
             method: "PUT",
             headers:{
                 "content-type" : "application/json"
@@ -27,6 +28,7 @@ const Update = () => {
         .then(res => res.json())
         .then(data =>{
             console.log(data)
+            toast.success("Update Successfull")
         })
     }
     return (

@@ -18,8 +18,26 @@ const Detail = () => {
           })
     }
 
-    const imageStyle = {
-        backgroundImage: `url(https://i.ibb.co/rb28cXk/giu-vicente-FMArg2k3q-OU-unsplash.jpg)`,
+    const imageStyle1 = {
+        backgroundImage: `url(https://i.ibb.co/Gkn2G8W/add-1.jpg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '20rem',
+        width: '100%'
+    };
+
+    const imageStyle2 = {
+        backgroundImage: `url(https://i.ibb.co/z5m8hpr/add-3.jpg)`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+        height: '20rem',
+        width: '100%'
+    };
+
+    const imageStyle3 = {
+        backgroundImage: `url(https://i.ibb.co/hWkHvDy/add-2.jpg)`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -33,7 +51,7 @@ const Detail = () => {
         <div className="w-[85%] m-auto">
             <div className="carousel w-[100%] m-auto">
                 <div id="slide1" className="carousel-item relative w-full">
-                    <div style={imageStyle} className="flex justify-center items-center">
+                    <div style={imageStyle1} className="flex justify-center items-center">
                         <div className="text-center">
                             <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
                             <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">
@@ -47,7 +65,7 @@ const Detail = () => {
                     </div>
                 </div>
                 <div id="slide2" className="carousel-item relative w-full">
-                    <div style={imageStyle} className="flex justify-center items-center">
+                    <div style={imageStyle2} className="flex justify-center items-center">
                         <div className="text-center">
                             <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
                             <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">
@@ -61,7 +79,7 @@ const Detail = () => {
                     </div>
                 </div>
                 <div id="slide3" className="carousel-item relative w-full">
-                    <div style={imageStyle} className="flex justify-center items-center">
+                    <div style={imageStyle3} className="flex justify-center items-center">
                         <div className="text-center">
                             <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
                             <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">

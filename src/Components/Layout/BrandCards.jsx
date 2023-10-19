@@ -4,17 +4,20 @@ import { Link } from "react-router-dom";
 
 const BrandCards = () => {
     const [brands, setBrands] = useState([]);
-    const [isDarkMode, setIsDarkMode] = useState(false);
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:5000/brands')
+        fetch('https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/brands')
             .then(res => res.json())
             .then(data => {
                 setBrands(data)
+                setIsLoading(false)
             })
     }, [])
 
-
+    if(isLoading){
+        return "Loading..."
+    }
     return (
         <div className="mt-4">
             <Banner></Banner>

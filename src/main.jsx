@@ -27,7 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/detail/:brand",
         element: <Detail></Detail>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/${params.brand}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products/${params.brand}`)
       },
       {
         path: "add-product",
@@ -36,17 +36,17 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/prod/${params.id}`),
+        loader: ({ params }) => fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products/prod/${params.id}`),
       },
       {
         path: "/details/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({ params }) => fetch(`http://localhost:5000/products/prod/${params.id}`),
+        loader: ({ params }) => fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products/prod/${params.id}`),
       },
       {
         path: "/cart",
         element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-        loader: () => fetch(`http://localhost:5000/cart`),
+        loader: () => fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/cart`),
       },
       {
         path: "/login",
