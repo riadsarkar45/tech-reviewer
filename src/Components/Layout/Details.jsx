@@ -28,12 +28,12 @@ const Details = () => {
     }
     return (
         <div>
-            <div className="w-[85%] m-auto bg-red-500 h-[26rem] grid grid-cols-2 gap-1">
+            <div className="w-[85%] m-auto bg-red-500 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-1">
 
-                <div className="bg-black h-[26rem] w-[100%]">
-                    <img className="w-full h-[26rem]" src={imageUrl} alt="" />
+                <div className="bg-black  w-[100%]">
+                    <img className="w-full" src={imageUrl} alt="" />
                 </div>
-                <div className="bg-pink-800 h-[26rem] w-[100%] p-3">
+                <div className="bg-pink-800 w-[100%] p-3">
                     <h2 className="text-xl">{name}</h2>
                     <h2 className="text-xl">Brand : {brandName}</h2>
                     <h2 className="text-xl">Price : {price}</h2>

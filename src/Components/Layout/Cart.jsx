@@ -22,35 +22,33 @@ const Cart = () => {
     return (
         <div className='w-[85%] m-auto'>
             <div className="overflow-x-auto">
-                <table className="table">
+                <table className="table w-[85%] m-auto">
                     {/* head */}
                     <thead>
                         <tr>
-                            <th></th>
-                            <th>Name</th>
-                            <th>Brand</th>
-                            <th>Image</th>
-                            <th>Price</th>
-                            <th>Action</th>
+                            <th className="hidden md:table-cell"></th>
+                            <th className="table-cell">Name</th>
+                            <th className="table-cell">Brand</th>
+                            <th className="table-cell">Image</th>
+                            <th className="table-cell">Price</th>
+                            <th className="table-cell">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            loaded?.map(cartItems =>
-                                <tr key={cartItems._id}>
-                                    <th>{++serial}</th>
-                                    <td>{cartItems.name}</td>
-                                    <td>{cartItems.brandName}</td>
-                                    <td><img className='w-[17%]' src={cartItems.imageUrl} alt="" /></td>
-                                    <td>{cartItems.price}</td>
-                                    <td><button onClick={() => handleDelete(cartItems._id)} className='btn btn-sm btn-error'>X</button></td>
-                                </tr>
-
-                            )
-                        }
+                        {loaded?.map((cartItems, index) => (
+                            <tr key={cartItems._id}>
+                                <td className="hidden md:table-cell">{index + 1}</td>
+                                <td className="table-cell">{cartItems.name}</td>
+                                <td className="table-cell">{cartItems.brandName}</td>
+                                <td className="table-cell"><img className='lg:w-[17%]' src={cartItems.imageUrl} alt="" /></td>
+                                <td className="table-cell">{cartItems.price}</td>
+                                <td className="table-cell"><button onClick={() => handleDelete(cartItems._id)} className='btn btn-sm btn-error'>X</button></td>
+                            </tr>
+                        ))}
                     </tbody>
                 </table>
             </div>
+
         </div>
     );
 };
