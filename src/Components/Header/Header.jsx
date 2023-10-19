@@ -2,16 +2,16 @@ import { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Header = () => {
-
+    
     const navebar = <>
-        {/* <NavLink to="/" ><li>Home</li></NavLink>
-        <NavLink to="/add-product" ><li>Add Product</li></NavLink>
-        <NavLink to="/" ><li>Home</li></NavLink> */}
+        
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/add-product">Add Product</NavLink></li>
         <li><NavLink to="/cart">My Cart</NavLink></li>
         <li><NavLink to="/login">Login</NavLink></li>
     </>
+
+    
 
     return (
         <div className="w-[85%] m-auto">

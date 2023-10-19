@@ -22,7 +22,7 @@ const Cart = () => {
     return (
         <div className='w-[85%] m-auto'>
             <div className="overflow-x-auto">
-                <table className="table w-[85%] m-auto">
+                <table className="table w-[100%] m-auto">
                     {/* head */}
                     <thead>
                         <tr>

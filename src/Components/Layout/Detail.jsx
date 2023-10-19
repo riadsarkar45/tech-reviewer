@@ -17,6 +17,8 @@ const Detail = () => {
         width: '100%'
     };
 
+    
+
     return (
         <div className="w-[85%] m-auto">
 <div className="carousel w-[100%] m-auto">
