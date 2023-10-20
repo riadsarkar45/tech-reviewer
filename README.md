@@ -2,7 +2,7 @@
 
 - [Live Site Link]( https://complete-cry.surge.sh/) uses [Babel]( https://complete-cry.surge.sh/) Live Link
 
-    #My project features
+    =>My project features
     
     => This project is created for tech review where you can see some latest software .
     => You can see the project price and add it to cart
