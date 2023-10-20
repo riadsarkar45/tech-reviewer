@@ -1,12 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import { AuthContexts } from '../AuthContext/AuthContext';
 const Cart = () => {
-
+    const { user } = useContext(AuthContexts)
     const loaded = useLoaderData();
-    const [loadData, setLoadData] = useState(loaded)
+    const [loadData, setLoadData] = useState(loaded, [])
     console.log(loaded)
+    const userCartItems = loadData?.filter(cartItem => cartItem.email === user.email);
+    console.log(userCartItems)
     // const {_id, imageUrl, name, brandName, productType, price, rating, short_desc} = loaded;
     const handleDelete = _id => {
         console.log(_id)
@@ -20,7 +23,7 @@ const Cart = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/cart/${_id}`, {
+                fetch(`https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/cart/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -32,7 +35,7 @@ const Cart = () => {
                             'success'
                         )
                         if (data.deletedCount > 0) {
-                            const remaining = loadData.filter(product => _id !== product._id)
+                            const remaining = userCartItems.filter(product => _id !== product._id)
                             setLoadData(remaining);
                         }
                     })
@@ -42,35 +45,24 @@ const Cart = () => {
     }
     let serial = 0;
     return (
-        <div className='w-[85%] m-auto'>
-            <div className="overflow-x-auto">
-                <table className="table w-[100%] m-auto">
-                    {/* head */}
-                    <thead>
-                        <tr>
-                            <th className="hidden md:table-cell"></th>
-                            <th className="table-cell">Name</th>
-                            <th className="table-cell">Brand</th>
-                            <th className="table-cell">Image</th>
-                            <th className="table-cell">Price</th>
-                            <th className="table-cell">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {loadData?.map((cartItems, index) => (
-                            <tr key={cartItems._id}>
-                                <td className="hidden md:table-cell">{index + 1}</td>
-                                <td className="table-cell">{cartItems.name}</td>
-                                <td className="table-cell">{cartItems.brandName}</td>
-                                <td className="table-cell"><img className='lg:w-[17%]' src={cartItems.imageUrl} alt="" /></td>
-                                <td className="table-cell">{cartItems.price}</td>
-                                <td className="table-cell"><button onClick={() => handleDelete(cartItems._id)} className='btn btn-sm btn-error'>X</button></td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
-            </div>
+        <div className='w-[85%] m-auto mt-5'>
+            <div className="overflow-x-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-3">
+                {
+                    userCartItems?.map((cartItems) => (
 
+                        <div className="hero justify-start bg-red-50">
+                            <div className="hero-content flex-col lg:flex-row">
+                                <img src={cartItems.imageUrl} className="w-[5rem] h-[5rem] rounded-lg shadow-2xl" />
+                                <div>
+                                    <h1 className="text-2xl font-bold">{cartItems.name}</h1>
+                                    <div className='flex justify-start mt-2'>
+                                        <button onClick={() => handleDelete(cartItems._id)} className="btn btn-error btn-sm">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    ))}
+            </div>
         </div>
     );
 };

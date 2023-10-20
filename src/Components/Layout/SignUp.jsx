@@ -42,7 +42,9 @@ const SignUp = () => {
                         console.log(result)
                     })
                     .catch(error => console.error(error))
-                navigate("/login")
+
+                    toast("SignUp Successfull login now")
+                    navigate("/login")
             })
             .catch(error => console.error(error))
     }
@@ -76,12 +78,10 @@ const SignUp = () => {
                                         <span className="label-text">Password</span>
                                     </label>
                                     <input type="password" name="password" placeholder="password" className="input input-bordered" required />
-                                    <label className="label">
-                                        <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                    </label>
+                                    
                                 </div>
                                 <div className="form-control mt-6">
-                                    <button className="btn btn-primary">Login</button>
+                                    <button className="btn btn-primary">Sign Up</button>
                                 </div>
                             </form>
                             <div className="w-[15rem] m-auto">

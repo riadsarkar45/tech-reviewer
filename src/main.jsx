@@ -14,11 +14,13 @@ import AuthContext from './Components/AuthContext/AuthContext.jsx'
 import Login from './Components/Layout/Login.jsx'
 import SignUp from './Components/Layout/SignUp.jsx'
 import PrivateRoute from './Components/PrivateRoute/PrivateRoute.jsx'
+import ErrorPage from './Components/ErrorPage/ErrorPage.jsx'
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
       {
         path: "/detail/:brand",
         element: <Detail></Detail>,
-        loader: ({ params }) => fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products/${params.brand}`)
+        loader: ({ params }) => fetch(`https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/products/${params.brand}`)
       },
       {
         path: "add-product",
@@ -36,17 +38,17 @@ const router = createBrowserRouter([
       {
         path: "/update/:id",
         element: <Update></Update>,
-        loader: ({ params }) => fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products/prod/${params.id}`),
+        loader: ({ params }) => fetch(`https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/products/prod/${params.id}`),
       },
       {
         path: "/details/:id",
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-        loader: ({ params }) => fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products/prod/${params.id}`),
+        loader: ({ params }) => fetch(`https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/products/prod/${params.id}`),
       },
       {
         path: "/cart",
         element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-        loader: () => fetch(`https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/cart`),
+        loader: () => fetch(`https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/cart`),
       },
       {
         path: "/login",

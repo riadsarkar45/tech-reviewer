@@ -1,8 +1,15 @@
-# React + Vite
+# Live Link
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- [Live Site Link]( https://complete-cry.surge.sh/) uses [Babel]( https://complete-cry.surge.sh/) Live Link
 
-Currently, two official plugins are available:
+    => My project features
+    
+    => This project is created for tech review where you can see some latest software .
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    => You can see the project price and add it to cart
+
+    => Tailwind and DaisyUi used for design and responsivness
+
+    => Some routes are private so non logged in user can't visite some page
+
+

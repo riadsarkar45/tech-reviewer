@@ -1,21 +1,24 @@
+import { useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
-
+import { FaBeer, FaStar } from 'react-icons/fa'
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
+import Rating from "react-rating";
 const Detail = () => {
 
-    const product = useLoaderData();
+    const products = useLoaderData();
+    const [product] = useState(products, []);
     console.log(product.length)
     if (product.length < 1) {
         Swal.fire({
             title: 'No product added in this brand',
             showClass: {
-              popup: 'animate__animated animate__fadeInDown'
+                popup: 'animate__animated animate__fadeInDown'
             },
             hideClass: {
-              popup: 'animate__animated animate__fadeOutUp'
+                popup: 'animate__animated animate__fadeOutUp'
             }
-          })
+        })
     }
 
     const imageStyle1 = {
@@ -53,10 +56,7 @@ const Detail = () => {
                 <div id="slide1" className="carousel-item relative w-full">
                     <div style={imageStyle1} className="flex justify-center items-center">
                         <div className="text-center">
-                            <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
-                            <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">
-                                Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
-                            </p>
+
                         </div>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -67,10 +67,7 @@ const Detail = () => {
                 <div id="slide2" className="carousel-item relative w-full">
                     <div style={imageStyle2} className="flex justify-center items-center">
                         <div className="text-center">
-                            <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
-                            <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">
-                                Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
-                            </p>
+
                         </div>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -81,10 +78,7 @@ const Detail = () => {
                 <div id="slide3" className="carousel-item relative w-full">
                     <div style={imageStyle3} className="flex justify-center items-center">
                         <div className="text-center">
-                            <h2 className="lg:text-3xl md:text-3xl text-xl text-red-300">Unleash Tomorrow's Promise: Exploring the Boundless Horizons of Technology</h2>
-                            <p className="w-full sm:w-11/12 md:w-10/12 lg:w-8/12 xl:w-6/12 mx-auto text-xl text-red-300">
-                                Celebrating the boundless creativity of humanity, technology is the canvas on which we paint the future, weaving innovation into the fabric of our lives, one line of code at a time.
-                            </p>
+
                         </div>
                     </div>
                     <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
@@ -102,14 +96,18 @@ const Detail = () => {
                 {
                     product?.map(product =>
 
-                        <div className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
+                        <div key={product._id} className="card card-compact w-[100%] m-auto bg-base-100 shadow-xl rounded-none">
                             <figure className="h-[16rem]"><img src={product.imageUrl} alt="Shoes" /></figure>
                             <div className="grid grid-cols-2 w-[78%] m-auto mt-3">
                                 <h2>Name : {product.name}</h2>
                                 <h2 className="">Brand : {product.brandName}</h2>
                                 <h2 className="mt-2">Price : {product.price}</h2>
                                 <h2 className="mt-2">Type : {product.productType}</h2>
-                                <h2 className="mt-2">Rating : {product.rating}</h2>
+                                <Rating className="text-orange-300"
+                                    initialRating={product.rating}
+                                    emptySymbol={<FaStar></FaStar>}
+                                    fullSymbol={<FaStar></FaStar>}
+                                />
                             </div>
                             <div className="card-body">
                                 <div className="card-actions justify-center">

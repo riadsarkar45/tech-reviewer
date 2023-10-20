@@ -72,7 +72,6 @@ const Header = () => {
                                         </a>
                                     </li>
                                     <li><Link>{user.email}</Link></li>
-                                    <li><Link to="/update">Update Profile</Link></li>
                                     <li onClick={hangleLogOut } ><a>Logout</a></li>
                                 </ul>
                             </div>

@@ -14,7 +14,7 @@ const AddProduct = () => {
         const short_desc = form.short_description.value;
         const product = {name, imageUrl, brandName, productType, price, rating, short_desc}
         console.log(product)
-        fetch("https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/products", {
+        fetch("https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/products", {
             method: "POST",
             headers:{
                 "content-type" : "application/json"
@@ -69,7 +69,7 @@ const AddProduct = () => {
                                     id="email"
                                     name="brandName"
                                     className="w-full px-3 py-2 border rounded-lg text-gray-700"
-                                    placeholder="Enter your image url"
+                                    placeholder="Enter product brand"
                                 />
                             </div>
 

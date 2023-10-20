@@ -7,7 +7,7 @@ const BrandCards = () => {
     const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
-        fetch('https://assignment-10-server-5tdyve1cu-riad-sarkars-projects.vercel.app/brands')
+        fetch('https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/brands')
             .then(res => res.json())
             .then(data => {
                 setBrands(data)
