@@ -35,7 +35,7 @@ const Update = () => {
         <div className="p-4">
             <div className="w-[85%] m-auto shadow-md">
                 <div className="p-4">
-                    <h2 className="text-2xl font-semibold mb-4">Add New Product</h2>
+                    <h2 className="text-2xl font-semibold mb-4">Update Product</h2>
                     <form onSubmit={handleUpdateProduct}>
                         <div className="mb-4">
                             <label htmlFor="name" className="block text-gray-700 text-sm font-medium mb-2">Product Name</label>
