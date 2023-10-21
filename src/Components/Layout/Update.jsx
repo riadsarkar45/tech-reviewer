@@ -4,9 +4,9 @@ import { toast } from 'react-toastify';
 
 const Update = () => {
     const loadedData = useLoaderData();
-    const {_id, imageUrl, name, brandName, productType, price, rating, short_desc} = loadedData;
+    const { _id, imageUrl, name, brandName, productType, price, rating, short_desc } = loadedData;
     console.log(loadedData)
-    const handleUpdateProduct = e =>{
+    const handleUpdateProduct = e => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -16,20 +16,20 @@ const Update = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const short_desc = form.short_description.value;
-        const product = {name, imageUrl, brandName, productType, price, rating, short_desc}
+        const product = { name, imageUrl, brandName, productType, price, rating, short_desc }
         console.log(product)
         fetch(`https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/products/prod/${_id}`, {
             method: "PUT",
-            headers:{
-                "content-type" : "application/json"
+            headers: {
+                "content-type": "application/json"
             },
             body: JSON.stringify(product)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-            toast.success("Update Successfull")
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                toast.success("Update Successfull")
+            })
     }
     return (
         <div className="p-4">
@@ -54,7 +54,7 @@ const Update = () => {
                                 type="text"
                                 id="email"
                                 name="imageUrl"
-                                defaultValue={imageUrl}
+                            defaultValue={imageUrl}
                                 className="w-full px-3 py-2 border rounded-lg text-gray-700"
                                 placeholder="Enter your image url"
                             />
@@ -62,26 +62,28 @@ const Update = () => {
 
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">Brand Name</label>
-                            <input
-                                type="text"
-                                id="email"
-                                name="brandName"
-                                defaultValue={brandName}
-                                className="w-full px-3 py-2 border rounded-lg text-gray-700"
-                                placeholder="Enter your image url"
-                            />
+                            <select name="brandName" className="w-full px-3 py-2 border rounded-lg text-gray-700" id="">
+                                <option selected={brandName}>{brandName}</option>
+                                <option value="Google">Google</option>
+                                <option value="Microsoft">Microsoft</option>
+                                <option value="Samsung">Samsung</option>
+                                <option value="Apple">Apple</option>
+                                <option value="Sony">Sony</option>
+                                <option value="Intel">Intel</option>
+                            </select>
                         </div>
 
                         <div className="mb-4">
                             <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">Product Type</label>
-                            <input
-                                type="text"
-                                id="email"
-                                name="productType"
-                                defaultValue={productType}
-                                className="w-full px-3 py-2 border rounded-lg text-gray-700"
-                                placeholder="Enter your product type"
-                            />
+                            <select name="productType" className="w-full px-3 py-2 border rounded-lg text-gray-700" id="">
+                                <option selected={productType}>{productType}</option>
+                                <option value="HeadPhone">HeadPhone</option>
+                                <option value="Computer">Computer</option>
+                                <option value="Electronics">Electronics</option>
+                                <option value="Hardware">Hardware</option>
+                                <option value="Phone">Phone</option>
+                                <option value="Camera">Camera</option>
+                            </select>
                         </div>
 
                         <div className="mb-4">

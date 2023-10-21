@@ -75,13 +75,13 @@ const AddProduct = () => {
 
                             <div className="mb-4">
                                 <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">Product Type</label>
-                                <input
-                                    type="text"
-                                    id="email"
-                                    name="productType"
-                                    className="w-full px-3 py-2 border rounded-lg text-gray-700"
-                                    placeholder="Enter your product type"
-                                />
+                                <select name="productType" className="w-full px-3 py-2 border rounded-lg text-gray-700" id="">
+                                    <option value="HeadPhone">HeadPhone</option>
+                                    <option value="Computer">Computer</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Hardware">Hardware</option>
+                                    <option value="Phone">Phone</option>
+                                </select>
                             </div>
 
                             <div className="mb-4">
