@@ -1,8 +1,9 @@
 
+import { useContext } from 'react';
 import Swal from 'sweetalert2/dist/sweetalert2.js'
 import 'sweetalert2/src/sweetalert2.scss'
 const AddProduct = () => {
-    const handleAddProduct = e =>{
+    const handleAddProduct = e => {
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
@@ -12,27 +13,28 @@ const AddProduct = () => {
         const price = form.price.value;
         const rating = form.rating.value;
         const short_desc = form.short_description.value;
-        const product = {name, imageUrl, brandName, productType, price, rating, short_desc}
+
+        const product = { name, imageUrl, brandName, productType, price, rating, short_desc }
         console.log(product)
         fetch("https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/products", {
             method: "POST",
-            headers:{
-                "content-type" : "application/json"
+            headers: {
+                "content-type": "application/json"
             },
             body: JSON.stringify(product)
         })
-        .then(res => res.json())
-        .then(data =>{
-            console.log(data)
-            Swal.fire({
-                position: 'center',
-                icon: 'success',
-                title: 'Product Uploaed',
-                showConfirmButton: false,
-                timer: 1500
+            .then(res => res.json())
+            .then(data => {
+                console.log(data)
+                Swal.fire({
+                    position: 'center',
+                    icon: 'success',
+                    title: 'Product Uploaed',
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+                e.target.reset()
             })
-            e.target.reset()
-        })
     }
     return (
         <div>
@@ -108,7 +110,7 @@ const AddProduct = () => {
 
                             <div className="mb-4">
                                 <label htmlFor="email" className="block text-gray-700 text-sm font-medium mb-2">Short Description</label>
-                                
+
                                 <textarea className="w-full px-3 py-2 border rounded-lg text-gray-700" placeholder="Product short description" name="short_description" id="" cols="30" rows="10"></textarea>
                             </div>
                             <div className="mt-6">

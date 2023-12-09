@@ -37,7 +37,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/update/:id",
-        element: <Update></Update>,
+        element: <PrivateRoute><Update></Update></PrivateRoute>,
         loader: ({ params }) => fetch(`https://assignment-10-server-8egwkdvkz-riad-sarkars-projects.vercel.app/products/prod/${params.id}`),
       },
       {
