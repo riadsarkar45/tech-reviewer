@@ -4,14 +4,18 @@
 
     =>Live Link : https://complete-cry.surge.sh/
 
-    =>My project features
-    
-    => This project is created for tech review where you can see some latest software .
-    
-    => You can see the project price and add it to cart
+# Tech Stacks
 
-    => Tailwind and DaisyUi used for design and responsivness
+   ### Frontend
 
-    => Some routes are private so non logged in user can't visite some page
+   - Authenticate with firebase
+   - Frontend techonologies React, React Router, daisyUi, TailwindCss
+   - Backend technologies Node, Express
+   - Database: MongoDb
+
+# Features
+   - Only verified user can upload or post new tech products
+   - Only verified user can delete or edit tech products
+   - Dark mode and light mode supported
 
 
